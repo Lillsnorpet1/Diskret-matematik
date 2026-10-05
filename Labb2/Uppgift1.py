@@ -84,21 +84,6 @@ for e, n, p, q in factors_list:
     d = eukiledes_algorithm(e, phi)
     private_keys.append((e, n, d))
 
-
-def readable(text):
-
-    if len(text) == 0:
-        return False
-
-    for value in text:
-
-        # Vanliga ASCII-tecken
-        if value < 32 or value > 126:
-            return False
-
-    return True
-
-
 print("(-- RESULTAT --)")
 
 for message_number, message in enumerate(messages, start=1):
