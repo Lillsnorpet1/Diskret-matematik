@@ -70,7 +70,7 @@ def eukiledes_algorithm(e, phi):
     if r > 1:
         raise ValueError("ingen invers")
         
-    # Om t är negativt gör vi det positivt med modulo
+    # Om t är negativt gös det positivt med modulo
     if t < 0:
         t += phi
         
@@ -102,7 +102,7 @@ for message_number, message in enumerate(messages, start=1):
                     byte_data = m.to_bytes(byte_length, byteorder='big')
                     full_text += byte_data.decode('latin-1', errors='ignore')
             
-            # En enkel kontroll att texten mest innehåller vanliga tecken
+            # Kontroll att texten mest innehåller vanliga tecken
             if len(full_text) > 0 and all(32 <= ord(c) <= 126 or c in '\n\r\t' for c in full_text):
                 print()
                 print("------------------------------------------")
@@ -118,5 +118,5 @@ for message_number, message in enumerate(messages, start=1):
                 found = True
                 break
         except Exception:
-            # Om det blir fel vid byte-konvertering eller liknande hoppar vi till nästa nyckel
+            # Om det blir fel vid byte-konvertering skippas till nästa nyckel
             continue
